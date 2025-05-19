@@ -1,7 +1,7 @@
 const approveSelectors = [
   'button[data-accesskey="Enter"]',
 ];
-const MAX_GAP = 20 * 60 * 1000; //tu liczy czy ktos przekroczyl przerwe pomiedzy eventami 20min
+const MAX_GAP = 35 * 60 * 1000; //tu liczy czy ktos przekroczyl przerwe pomiedzy eventami 20min
 
 let lastActionTime = Number(localStorage.getItem('workTimerLastAction')) || null;
 let workTimeMs = Number(localStorage.getItem('workTimerMs') || 0);
