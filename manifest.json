@@ -3,17 +3,21 @@
   "name": "Giraffana",
   "version": "1.1",
   "description": "Tracks and displays time spent on selected pages of the Hayden AI console.",
-  "permissions": ["activeTab"],
-  "host_permissions": ["https://beta.console.hayden.ai/matches*",
-  "https://beta.console.hayden.ai/groupsReview*", "https://beta.console.hayden.ai/internalReview*"
+  "host_permissions": [
+  "https://beta.console.hayden.ai/matches*",
+  "https://beta.console.hayden.ai/groupsReview*", 
+  "https://beta.console.hayden.ai/internalReview*"
   ],
   "action": {
     "default_title": "Giraffana"
   },
   "content_scripts": [
     {
-      "matches": ["https://beta.console.hayden.ai/matches*",
-  "https://beta.console.hayden.ai/groupsReview*", "https://beta.console.hayden.ai/internalReview*"],
+      "matches": [
+        "https://beta.console.hayden.ai/matches*",
+        "https://beta.console.hayden.ai/groupsReview*", 
+        "https://beta.console.hayden.ai/internalReview*"
+      ],
       "js": ["content.js"]
     }
   ]
