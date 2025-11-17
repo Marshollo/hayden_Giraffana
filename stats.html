@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weekly Stats</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 2em;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+
+  h2 {
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #e9ecef;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f1f3f5;
+  }
+
+.charts-row {
+  display: flex;
+  gap: 32px;                        /* Możesz też zmienić na 24px lub 40px wg uznania */
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 1.2em;
+}
+
+.chart-block {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  padding: 1em;
+  flex: 1 1 0;                     /* Klucz! Pozwala działowi elastycznie zajmować miejsce */
+  min-width: 350px;                /* Możesz zmienić jeśli chcesz mniejszy zakres */
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;             /* ważne! Canvas rozciąga się na całą szerokość */
+}
+
+.chart-block h3 {
+  margin: 0 0 0.5em 0;
+}
+
+.chart-block canvas {
+  width: 100% !important;
+  height: 420px !important;         /* Możesz dać 380-460px według uznania */
+  display: block;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  max-width: 100%;
+}
+</style>
+</head>
+<body>
+  <h1>Weekly Stats</h1>
+  <div id="stats">
+    <!-- Data will be injected here by stats.js -->
+  </div>
+
+  <div class="charts-container">
+    <div class="chart-block">
+      <h2>Weekly Events Chart</h2>
+      <canvas id="eventsChart"></canvas>
+    </div>
+    <div class="chart-block">
+      <h2>Weekly Hours Chart</h2>
+      <canvas id="hoursChart"></canvas>
+    </div>
+  </div>
+
+  <script src="chart.js"></script>
+  <script src="stats.js"></script>
+</body>
+</html>

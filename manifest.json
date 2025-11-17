@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Giraffana",
+  "version": "4.0",
+  "description": "Tracks and displays time spent on selected pages of the Hayden AI console.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://beta.console.hayden.ai/*"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "Giraffana",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://beta.console.hayden.ai/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icon48.png", "stats.html", "stats.js", "chart.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
